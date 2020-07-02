@@ -1,14 +1,16 @@
 package main.java.com.hw4.geometry.shapes2D;
 
 import main.java.com.hw4.geometry.PlaneShape;
+import main.java.com.hw4.geometry.interfaces.AreaMeasurable;
+import main.java.com.hw4.geometry.interfaces.PerimeterMeasurable;
 import main.java.com.hw4.geometry.vertexes.Vertex2D;
 
-public class Circle extends PlaneShape {
-    Vertex2D vertex2D;
-    double radius;
+public class Circle extends PlaneShape implements AreaMeasurable, PerimeterMeasurable {
+    private double radius;
+    Vertex2D vertex;
 
-    public Circle(int aX, int aY, double radius) {
-        this.vertex2D = new Vertex2D(aX, aY);
+    public Circle(Vertex2D vertex, double radius) {
+        this.vertex = vertex;
         this.radius = radius;
     }
 
@@ -24,7 +26,7 @@ public class Circle extends PlaneShape {
 
     @Override
     public String toString() {
-        return "Circle" + "\nVertice " + vertex2D + "\nPerimeter: " + getPerimeter()
+        return "Circle" + "\nVertice " + vertex + "\nPerimeter: " + getPerimeter()
                 + "\nArea: " + getArea();
     }
 }

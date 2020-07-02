@@ -1,14 +1,16 @@
 package main.java.com.hw4.geometry.shapes2D;
 
 import main.java.com.hw4.geometry.PlaneShape;
+import main.java.com.hw4.geometry.interfaces.AreaMeasurable;
+import main.java.com.hw4.geometry.interfaces.PerimeterMeasurable;
 import main.java.com.hw4.geometry.vertexes.Vertex2D;
 
-public class Rectangle extends PlaneShape {
-    Vertex2D vertex2D;
-    double width, height;
+public class Rectangle extends PlaneShape implements AreaMeasurable, PerimeterMeasurable {
+    private double width, height;
+    Vertex2D vertex;
 
-    public Rectangle(int aX, int aY, double width, double height) {
-        this.vertex2D = new Vertex2D(aX, aY);
+    public Rectangle(Vertex2D vertex, double width, double height) {
+        this.vertex = vertex;
         this.width = width;
         this.height = height;
     }
@@ -25,7 +27,7 @@ public class Rectangle extends PlaneShape {
 
     @Override
     public String toString() {
-        return "Rectangle " + "\nVertice " + vertex2D + "\nPerimeter: " + getPerimeter()
+        return "Rectangle " + "\nVertice " + vertex + "\nPerimeter: " + getPerimeter()
                 + "\nArea: " + getArea();
     }
 }

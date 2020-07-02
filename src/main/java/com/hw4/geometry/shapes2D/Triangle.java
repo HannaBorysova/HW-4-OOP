@@ -1,22 +1,16 @@
 package main.java.com.hw4.geometry.shapes2D;
 
 import main.java.com.hw4.geometry.PlaneShape;
+import main.java.com.hw4.geometry.interfaces.AreaMeasurable;
+import main.java.com.hw4.geometry.interfaces.PerimeterMeasurable;
 import main.java.com.hw4.geometry.vertexes.Vertex2D;
 
-public class Triangle extends PlaneShape {
-    Vertex2D a;
-    Vertex2D b;
-    Vertex2D c;
-
+public class Triangle extends PlaneShape implements AreaMeasurable, PerimeterMeasurable {
     private double ab;
     private double bc;
     private double ca;
 
-    public Triangle(int aX, int aY, int bX, int bY, int cX, int cY) {
-        this.a = new Vertex2D(aX, aY);
-        this.b = new Vertex2D(bX, bY);
-        this.c = new Vertex2D(cX, cY);
-
+    public Triangle(Vertex2D a, Vertex2D b, Vertex2D c) {
         ab = distanceBetweenTwoVertices(a, b);
         bc = distanceBetweenTwoVertices(b, c);
         ca = distanceBetweenTwoVertices(c, a);
@@ -36,7 +30,7 @@ public class Triangle extends PlaneShape {
 
     @Override
     public String toString() {
-        return "Triangle" + "\nVertice A: " + a + "\nVertice B: " + b + "\nVertice C: " + c
+        return "Triangle" + "\nVertice A: " + ab + "\nVertice B: " + bc + "\nVertice C: " + ca
                 + "\nPerimeter: " + getPerimeter() + "\nArea: " + getArea();
     }
 }
