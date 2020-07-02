@@ -18,5 +18,16 @@ public abstract class Shape {
                 + Math.pow((a.getZ() - b.getZ()), 2));
     }
 
-    List<Vertex> vertices;
+    private List<Vertex> vertices;
+
+    public Shape(List<Vertex> vertices) {
+        this.vertices = vertices;
+    }
+
+    @Override
+    public String toString() {
+        return "Shape{" +
+                "vertices=" + vertices +
+                '}';
+    }
 }

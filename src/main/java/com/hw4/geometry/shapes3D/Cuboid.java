@@ -3,14 +3,15 @@ package main.java.com.hw4.geometry.shapes3D;
 import main.java.com.hw4.geometry.SpaceShape;
 import main.java.com.hw4.geometry.vertexes.Vertex3D;
 
+import java.util.Arrays;
+
 public class Cuboid extends SpaceShape {
     private int width;
     private int height;
     private int depth;
-    Vertex3D vertex;
 
-    public Cuboid(Vertex3D vertex, int width, int height, int depth) {
-        this.vertex = vertex;
+    public Cuboid(Vertex3D a, int width, int height, int depth) {
+        super(Arrays.asList(a));
         this.width = width;
         this.height = height;
         this.depth = depth;
@@ -28,7 +29,7 @@ public class Cuboid extends SpaceShape {
 
     @Override
     public String toString() {
-        return "Cuboid " + "\nVertice " + vertex + ", width: " + width + " , height: " + height
+        return "Cuboid " + "\nVertice " + super.toString() + ", width: " + width + " , height: " + height
                 + " , depth: " + depth + "\nArea: " + getArea() + "\nVolume: " + getVolume();
     }
 }

@@ -5,12 +5,13 @@ import main.java.com.hw4.geometry.interfaces.AreaMeasurable;
 import main.java.com.hw4.geometry.interfaces.PerimeterMeasurable;
 import main.java.com.hw4.geometry.vertexes.Vertex2D;
 
+import java.util.Arrays;
+
 public class Circle extends PlaneShape implements AreaMeasurable, PerimeterMeasurable {
     private double radius;
-    Vertex2D vertex;
 
-    public Circle(Vertex2D vertex, double radius) {
-        this.vertex = vertex;
+    public Circle(Vertex2D a, double radius) {
+        super(Arrays.asList(a));
         this.radius = radius;
     }
 
@@ -26,7 +27,7 @@ public class Circle extends PlaneShape implements AreaMeasurable, PerimeterMeasu
 
     @Override
     public String toString() {
-        return "Circle" + "\nVertice " + vertex + "\nPerimeter: " + getPerimeter()
+        return "Circle" + "\nVertice " + super.toString() + "\nPerimeter: " + getPerimeter()
                 + "\nArea: " + getArea();
     }
 }

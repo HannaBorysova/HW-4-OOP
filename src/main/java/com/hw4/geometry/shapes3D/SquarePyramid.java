@@ -3,14 +3,15 @@ package main.java.com.hw4.geometry.shapes3D;
 import main.java.com.hw4.geometry.SpaceShape;
 import main.java.com.hw4.geometry.vertexes.Vertex3D;
 
+import java.util.Arrays;
+
 
 public class SquarePyramid extends SpaceShape {
     private double baseWidth;
     private double pyramidHeight;
-    Vertex3D vertex;
 
-    public SquarePyramid(Vertex3D vertex, double baseWidth, double pyramidHeight) {
-        this.vertex = vertex;
+    public SquarePyramid(Vertex3D a, double baseWidth, double pyramidHeight) {
+        super(Arrays.asList(a));
         this.baseWidth = baseWidth;
         this.pyramidHeight = pyramidHeight;
     }
@@ -27,7 +28,7 @@ public class SquarePyramid extends SpaceShape {
 
     @Override
     public String toString() {
-        return "SquarePyramid " + "\nVertice " + vertex + ", baseWidth: " + baseWidth
+        return "SquarePyramid " + "\nVertice " + super.toString() + ", baseWidth: " + baseWidth
                 + ", pyramidHeight: " + pyramidHeight + "\nArea: " + getArea()
                 + "\nVolume: " + getVolume();
     }

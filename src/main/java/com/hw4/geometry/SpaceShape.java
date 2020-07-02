@@ -7,5 +7,7 @@ import main.java.com.hw4.geometry.vertexes.Vertex;
 import java.util.List;
 
 public abstract class SpaceShape extends Shape implements AreaMeasurable, VolumeMeasurable {
-    List<Vertex> vertices;
+    public SpaceShape(List<Vertex> vertices3D) {
+        super(vertices3D);
+    }
 }

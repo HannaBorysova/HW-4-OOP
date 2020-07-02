@@ -7,5 +7,7 @@ import main.java.com.hw4.geometry.vertexes.Vertex;
 import java.util.List;
 
 public abstract class PlaneShape extends Shape implements PerimeterMeasurable, AreaMeasurable {
-    List<Vertex> vertices;
+    public PlaneShape(List<Vertex> vertices2D) {
+        super(vertices2D);
+    }
 }

@@ -5,12 +5,13 @@ import main.java.com.hw4.geometry.interfaces.AreaMeasurable;
 import main.java.com.hw4.geometry.interfaces.PerimeterMeasurable;
 import main.java.com.hw4.geometry.vertexes.Vertex2D;
 
+import java.util.Arrays;
+
 public class Rectangle extends PlaneShape implements AreaMeasurable, PerimeterMeasurable {
     private double width, height;
-    Vertex2D vertex;
 
-    public Rectangle(Vertex2D vertex, double width, double height) {
-        this.vertex = vertex;
+    public Rectangle(Vertex2D a, double width, double height) {
+        super(Arrays.asList(a));
         this.width = width;
         this.height = height;
     }
@@ -27,7 +28,7 @@ public class Rectangle extends PlaneShape implements AreaMeasurable, PerimeterMe
 
     @Override
     public String toString() {
-        return "Rectangle " + "\nVertice " + vertex + "\nPerimeter: " + getPerimeter()
+        return "Rectangle " + "\nVertice " + super.toString() + "\nPerimeter: " + getPerimeter()
                 + "\nArea: " + getArea();
     }
 }
